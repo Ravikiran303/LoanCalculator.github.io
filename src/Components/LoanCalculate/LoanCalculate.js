@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import "../LoanCalculate/LoanCalculate.css";
+import LoanAmount from "../LoanAmount/LoanAmount";
+import LoanDuration from "../LoanDuration/LoanDuration";
+import axios from "axios";
 
 export class LoanCalculate extends Component {
-  state = {
-    amountValue: 5000,
-    yearsValue: 1
+  constructor(props) {
+    super(props);
+    console.log(props);
+  }
+  componentDidMount = async () => {
+    const responce = await axios.get(
+      "https://ftl-frontend-test.herokuapp.com/interest?amount=600&numMonths=7"
+    );
   };
+  getAmount() {
+    console.log("amount");
+  }
+  getYears() {
+    console.log("years");
+  }
   render() {
     return (
       <div className="Loan">
-        <h4>Loan amount : between $500 and $5000 </h4>
-        <input type="range" min="1" max="100" value="50" />
-        <h4>Loan Duration : 6 and 24 months</h4>
-        <input type="range" min="1" max="100" value="50" />
+        <LoanAmount amount={this.getAmount} />
+        <LoanDuration years={this.getYears} />
       </div>
     );
   }
