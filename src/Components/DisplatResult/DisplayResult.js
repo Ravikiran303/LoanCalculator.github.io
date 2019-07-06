@@ -7,7 +7,6 @@ export class DisplatResult extends Component {
       monthlyPayment: { amount = 0 } = {},
       interestRate = 0
     } = this.props.result;
-    console.log(this.props.result);
 
     return (
       <div>
