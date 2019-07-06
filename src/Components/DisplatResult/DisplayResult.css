@@ -1,0 +1,14 @@
+.item {
+  font-weight: bold;
+  height: 35px;
+  padding: 10px 10px 10px 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+h3 {
+  margin: auto;
+  background: #014667;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 5px 10px 5px;
+  margin: 0;
+}
